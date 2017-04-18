@@ -11,5 +11,6 @@ The focus of this project is to measure the latency of all components of the pro
 4.	text copied into 5 equal textfiles
 5.	a zip of the 5 files
 6.	showing the result at a web-page (servlet)
+
 The collected data will be saved into a LatencyObject and a LatencyService class will make all the data available. The duration of the ResultServlet will also be measured by the use of an servlet-filter class.
 
