@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<filter>
+		<filter-name>ProfilerFilter</filter-name>
+		<filter-class>servlets.ProfilerFilter</filter-class>
+		<!--init-param>
+			<param-name>env</param-name>
+			<param-value>dev</param-value>
+		</init-param-->
+	</filter>
+	<filter-mapping>
+		<filter-name>ProfilerFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>FormServlet</servlet-name>
+		<servlet-class>servlets.FormServlet</servlet-class>
+		<init-param>
+			<param-name>image-path</param-name>
+			<param-value>/images/image1.jpg</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>ZipServlet</servlet-name>
+		<servlet-class>servlets.ZipServlet</servlet-class>
+		<init-param>
+			<param-name>image-path</param-name>
+			<param-value>/images/image2.jpg</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ResultServlet</servlet-name>
+		<servlet-class>servlets.ResultServlet</servlet-class>
+		<init-param>
+			<param-name>image-path</param-name>
+			<param-value>/images/image3.jpg</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>FormServlet</servlet-name>
+		<url-pattern>/form</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ZipServlet</servlet-name>
+		<url-pattern>/dozip</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ResultServlet</servlet-name>
+		<url-pattern>/result</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	<welcome-file-list>
+		<welcome-file>form</welcome-file>
+	</welcome-file-list>
+</web-app>
